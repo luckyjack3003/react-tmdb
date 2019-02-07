@@ -1,3 +1,6 @@
+## Demo
+[TMDb Movie Search - Live DEMO](https://luckyjack3003.github.io/)
+
 ## Tools
 Key tools used in this React project are:
 
