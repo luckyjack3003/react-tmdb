@@ -15,7 +15,7 @@ Key tools used in this React project are:
 | [GIMP](https://www.gimp.org/) | GIMP is a cross-platform image editor |
 
 ## Installation
-1. Clone project code.
+1. Clone project code.`git clone https://github.com/luckyjack3003/react-tmdb.git`
 2. cd reactjs-tmdb
 3. Installation dependence : `npm install`
 4. Start local server: `npm start`
