@@ -5,8 +5,8 @@ describe('Home', () => {
     let page
 
     beforeAll(async () => {
-         browser = await puppeteer.launch({headless:false})
-         page = await browser.newPage();
+        browser = await puppeteer.launch({headless:false})
+        page = await browser.newPage();
     })
 
     beforeEach(async () => {
@@ -28,7 +28,7 @@ describe('Home', () => {
     it('search function on home page e2etests', async () => {
         await page.waitFor(1000);
         await page.click('#root > div > div > div > div.logo-container > div > input');
-        await page.keyboard.type('a star is born');
+        await page.keyboard.type('A Star Is Born');
         await page.keyboard.press('Enter')
         await page.waitFor(1000);
         const text = await page.evaluate(() => document.body.innerHTML)
@@ -38,10 +38,11 @@ describe('Home', () => {
     })
     it('click a movie should go to movie detail page', async () => {
         await page.waitFor(1000);
+        const text1 = await page.evaluate(() => document.querySelector('#root > div > div > div > div.home-content > div.movies-list > div:nth-child(1) > div.card-title').innerHTML)
         page.click('#root > div > div > div > div.home-content > div.movies-list > div:nth-child(1) > div.card-item-gallery > a')
         await page.waitFor(1000);
         const text = await page.evaluate(() => document.body.innerHTML)
-        expect(text).toContain('In a series of escalating encounters, security guard Dav')
+        expect(text).toContain(text1)
     })
     it('click previous button on a movie detail page should go to home page', async () => {
         await page.waitFor(1000);
